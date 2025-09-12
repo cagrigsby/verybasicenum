@@ -19,7 +19,7 @@ run_command "ANYTHING IN /VAR/MAIL:" "ls /var/mail"
 run_command "ANYTHING IN /HOME:" "ls /home"
 run_command "USERS:" "cat /etc/passwd | cut -d : -f 1"
 run_command "SUID BINARIES:" "find / -perm -u=s -type f 2>/dev/null"
-run_command "ODD FILES:" "find / -type f -name -o -name "*.txt" -o -name "*.kdbx" -o -name "*.zip" 2>/dev/null"
+run_command "ODD FILES:" "find / -type f -name -o -name "*.txt" -o -name "*.kdbx" -o -name "*.zip" -o -name "*.bak" -o -name "*config*" -o -name "*pass*" 2>/dev/null"
 run_command "WRITABLE DIRECTORIES:" "find / -writable -type d 2>/dev/null"
 run_command "ROOT Processes:" "ps aux | grep -i 'root' --color=auto"
 
